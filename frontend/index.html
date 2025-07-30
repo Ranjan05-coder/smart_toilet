@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Toilet Monitoring Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="center-container">
+    <div class="dashboard-controls">
+    <button class="dark-mode-toggle">🌙 Dark Mode</button>
+    <button class="reset-btn">🧹 Reset</button>
+    </div>
+    <h2>Smart Toilet Monitoring Dashboard</h2>
+    <div id="sensorAlert" class="manual-alert-box">Checking sensor...</div>
+    <div id="aiCleaningAlert" class="ai-alert-box">Checking status...</div>
+
+    
+    <!-- Info cards for DHT11 -->
+    <div class="info-row">
+      <div class="info-card" id="tempBox">Temperature: 27°C</div>
+      <div class="info-card" id="humBox">Humidity: 62%</div>
+    </div>
+
+    <!-- Flex row for all charts -->
+    <div class="chart-row">
+      <div class="chart-container">
+        <canvas id="usageChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="odorChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="historyChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="tempChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="humChart"></canvas>
+      </div>
+    </div>
+    
+    <h3>Maintenance Log</h3>
+    <table id="logTable">
+      <tr><th>Time</th><th>Action</th></tr>
+    </table>
+  </div>
+  <div id="toast"></div>
+  <script src="dashboard.js"></script>
+</body>
+</html>
